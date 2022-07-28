@@ -9,6 +9,9 @@ const GlobalStyle = createGlobalStyle`
         --laranja: #E8833A;
         --texto: #293845;
         --branco: #FFFFFF;
+        --footer: #DFE6ED;
+        --footer-borda: #9EADBA;
+        text-decoration: none;
     }
     
     body {

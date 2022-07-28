@@ -17,4 +17,7 @@ const Head = styled.header`
     justify-content: center;
     align-items: center;
     box-shadow: 1px 1px var(--cinza-borda);
+    position: fixed;
+    left: 0;
+    top: 0;
 `

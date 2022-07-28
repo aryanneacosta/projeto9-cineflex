@@ -19,7 +19,7 @@ export default function Home() {
     return (
         <>
             <Header />
-            <Main>
+            <Container>
                 <Top>Selecione o filme</Top>
                 <div>
                     {movies.map((movies, index) =>
@@ -27,20 +27,22 @@ export default function Home() {
                             <Poster key={index}>
                                 <img
                                     src={movies.posterURL}
-                                    alt={movies.id} />
+                                    alt={movies.id} 
+                                />
                             </Poster>
                         </Link>
                     )}
 
                 </div>
-            </Main>
+            </Container>
         </>
     );
 }
 
-const Main = styled.div`
+const Container = styled.div`
     background-color: var(--cor-fundo);
     height: 100%;
+    margin-top: 68px;
 
     div {
         display: flex;
