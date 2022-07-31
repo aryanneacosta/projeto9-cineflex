@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-export default function Footer({ title, posterURL }) {
+export default function Footer({ title, posterURL, day, time }) {
+    console.log(title, posterURL, day, time)
     return (
         <Bottom>
             <Poster>
@@ -8,6 +9,7 @@ export default function Footer({ title, posterURL }) {
             </Poster>
             <Info>
                 <div>{title}</div>
+                <div>{day} - {time}</div>
             </Info>
         </Bottom>
     );

@@ -11,6 +11,13 @@ const GlobalStyle = createGlobalStyle`
         --branco: #FFFFFF;
         --footer: #DFE6ED;
         --footer-borda: #9EADBA;
+        --seats-texto: #4E5A65;
+        --selected: #8DD7CF;
+        --selected-borda: #1AAE9E;
+        --available: #C3CFD9;
+        --available-borda: #7B8B99;
+        --unavailable: #FBE192;
+        --unavailable-borda: #F7C52B;
         text-decoration: none;
     }
     

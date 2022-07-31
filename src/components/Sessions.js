@@ -6,13 +6,13 @@ import Footer from "./Footer";
 import Header from "./Header";
 
 export default function Sessions() {
-    const params = useParams();
+    const { idFilme } = useParams();
     const [sessions, setSessions] = useState([]);
     const [days, setDays] = useState([]);
 
     useEffect(() => {
         const promise = axios.get(
-            `https://mock-api.driven.com.br/api/v5/cineflex/movies/${params.idFilme}/showtimes`
+            `https://mock-api.driven.com.br/api/v7/cineflex/movies/${idFilme}/showtimes`
         );
         promise.then((resposta) => {
             setSessions(resposta.data);
