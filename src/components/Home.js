@@ -32,7 +32,6 @@ export default function Home() {
                             </Poster>
                         </Link>
                     )}
-
                 </div>
             </Container>
         </>

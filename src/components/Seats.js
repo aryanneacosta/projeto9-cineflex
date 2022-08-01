@@ -9,7 +9,7 @@ import Seat from "./Seat";
 export default function Seats({ info }) {
     const { idSessao } = useParams();
     const navigate = useNavigate();
-    const [movieInfo, setMovieInfo] = useState([]);
+    const [movieInfo, setMovieInfo] = useState(null);
     const [seat, setSeat] = useState([]);
     const [selectedSeats, setSelectedSeats] = useState([]);
     const [form, setForm] = useState({ nome: '', cpf: '' });
@@ -52,7 +52,7 @@ export default function Seats({ info }) {
     }
 
     function footer() {
-        if (movieInfo > 0) {
+        if (movieInfo !== null) {
             return (
                 <Footer
                     title={movieInfo.movie.title}
@@ -63,7 +63,7 @@ export default function Seats({ info }) {
             )
         } else {
             return (
-                <div>é isso ai</div>
+                <div>Carregando...</div>
             )
         }
     }
@@ -113,7 +113,6 @@ export default function Seats({ info }) {
                         </Option>
                     </Options>
                 </SeatsContainer>
-
                 <Input>
                     <form onSubmit={buyTickets}>
                         <div>Nome do comprador:</div>
@@ -138,9 +137,7 @@ export default function Seats({ info }) {
                     </form>
                 </Input>
             </Container>
-
             {footer()}
-
         </>
     );
 }

@@ -1,19 +1,32 @@
 import styled from "styled-components";
 
 export default function Footer({ title, posterURL, day, time }) {
-    console.log(title, posterURL, day, time)
-    return (
-        <Bottom>
-            <Poster>
-                <img src={posterURL} alt={title} />
-            </Poster>
-            <Info>
-                <div>{title}</div>
-                <div>{day} - {time}</div>
-            </Info>
-        </Bottom>
-    );
+    if (day !== undefined) {
+        return (
+            <Bottom>
+                <Poster>
+                    <img src={posterURL} alt={title} />
+                </Poster>
+                <Info>
+                    <div>{title}</div>
+                    <div>{day} - {time}</div>
+                </Info>
+            </Bottom>
+        )
+    } else {
+        return (
+            <Bottom>
+                <Poster>
+                    <img src={posterURL} alt={title} />
+                </Poster>
+                <Info>
+                    <div>{title}</div>
+                </Info>
+            </Bottom>
+        )
+    }
 }
+    
 
 const Bottom = styled.footer`
     height: 118px;

@@ -45,7 +45,7 @@ const Container = styled.div`
     background-color: var(--cor-fundo);
     margin-top: 68px;
     margin-bottom: 118px;
-    padding-bottom: 20px;
+    padding-bottom: 100px;
 `;
 
 const Top = styled.div`
