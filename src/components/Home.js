@@ -18,13 +18,13 @@ export default function Home() {
 
     return (
         <>
-            <Header />
+            <Header page={''}/>
             <Container>
                 <Top>Selecione o filme</Top>
                 <div>
                     {movies.map((movies, index) =>
-                        <Link to={`/sessoes/${movies.id}`}>
-                            <Poster key={index}>
+                        <Link to={`/sessoes/${movies.id}`} key={index}>
+                            <Poster>
                                 <img
                                     src={movies.posterURL}
                                     alt={movies.id} 

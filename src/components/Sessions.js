@@ -22,7 +22,7 @@ export default function Sessions() {
 
     return (
         <>
-            <Header />
+            <Header page={'/'}/>
             <Container>
                 <Top>Selecione o horário</Top>
 

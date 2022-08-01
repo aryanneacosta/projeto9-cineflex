@@ -61,11 +61,7 @@ export default function Seats({ info }) {
                     time={movieInfo.name}
                 />
             )
-        } else {
-            return (
-                <div>Carregando...</div>
-            )
-        }
+        } 
     }
 
     function buyTickets(event) {
@@ -79,6 +75,7 @@ export default function Seats({ info }) {
         
         promise.then(resposta => {
             info({
+                idSession: movieInfo.id,
                 title: movieInfo.movie.title,
                 day: movieInfo.day.weekday,
                 time: movieInfo.name,
@@ -89,9 +86,17 @@ export default function Seats({ info }) {
         });
     }
 
+    function header() {
+        if (movieInfo !== null) {
+            return (
+                <Header page={`/sessoes/${movieInfo.movie.id}`}/>
+            )
+        }
+    }
+
     return (
         <>
-            <Header />
+            {header()}
             <Container>
                 <Top>Selecione o(s) assento(s)</Top>
                 <SeatsContainer>

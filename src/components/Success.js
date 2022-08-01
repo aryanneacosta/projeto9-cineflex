@@ -3,11 +3,11 @@ import styled from "styled-components";
 import Header from "./Header";
 
 export default function Success({ concluded }) {
-    const { title, day, time, seats, buyer } = concluded;
+    const { idSession, title, day, time, seats, buyer } = concluded;
 
     return (
         <>
-            <Header />
+            <Header page={`/assentos/${idSession}`}/>
             <Container>
                 <Top>
                     <div>Pedido feito</div>
@@ -20,8 +20,8 @@ export default function Success({ concluded }) {
                 </div>
                 <div>
                     <Title>Ingressos</Title>
-                    {seats.map(({ seat }) => {
-                        return <Info>Assento {seat}</Info>
+                    {seats.map(({ seat }, index) => {
+                        return <Info key={index}>Assento {seat}</Info>
                     })}
                 </div>
                 <div>
@@ -43,9 +43,8 @@ const Container = styled.div`
     height: 100%;
     width: 100%;
     background-color: var(--cor-fundo);
-    margin-top: 68px;
-    margin-bottom: 118px;
-    padding-bottom: 100px;
+    padding-top: 70px;
+    padding-bottom: 150px;
 `;
 
 const Top = styled.div`
